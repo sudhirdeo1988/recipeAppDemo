@@ -1,0 +1,136 @@
+@import '../../assets/scss/utilities.scss';
+
+.c-recipeItemDetails{
+  display: block;
+  padding: 20px 0;
+  font-family: 'Roboto Condensed', sans-serif;
+
+    .r_info{
+      display: block;
+
+        .r_name{
+          color: $primaryColor;
+          display: block;
+          font-size: 16px;
+          line-height: 20px;
+          font-weight: 700;
+          margin: 0 0 10px;
+        }
+        .r_section{
+          border-bottom: 1px solid #eee;
+          display: block;
+          margin-bottom: 10px;
+          padding-bottom: 10px;
+
+            .s_label{
+              display: block;
+              font-size: 10px;
+              font-weight: 700;
+              line-height: 12px;
+              color: #999;
+              letter-spacing: 0.5px;
+              margin-bottom: 5px;
+              text-transform: uppercase;
+            }
+            .s_block{
+              display: block;
+
+                &.healthLbl{
+                  ul{
+                    display: block;
+                    margin: 0;
+                    padding: 0;
+                      li{
+                        color: #333;
+                        display: inline-block;
+                        padding: 3px 10px;
+                        margin:0 4px 4px 0;
+                        border: 1px solid #ccc;
+                        font-size: 10px;
+                        line-height: 11px;
+                        border-radius: 10px;
+                      }
+                  }
+
+                  &.type-02{
+                    ul{
+                      li{
+                        border: 0;
+                        padding: 0;
+                        display: block;
+                        position: relative;
+                        width: 100%;
+                        padding-right: 100px;
+                        margin-bottom: 8px;
+
+                          .info{
+                            color: #333;
+                            display: block;
+                            font-weight: 600;
+                            font-size: 12px;
+                            line-height: 16px;
+                          }
+                          .calInfo{
+                            color: $primaryColor;
+                            display: block;
+                            font-weight: 600;
+                            font-size: 12px;
+                            line-height: 16px;
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                          }
+                      }
+                    }
+                  }
+                  &.type-03{
+                    height: auto;
+                    overflow: hidden;
+                    ul{
+                      li{
+                        display: block;
+                        float: left;
+                        border: 0;
+                        padding: 0 5px 5px 0;
+                        margin-right: 5px;
+                        margin-bottom: 0;
+                        width: calc(50% - 8px);
+                        border-right: 1px solid #eeee;
+                        border-radius: 0;
+
+                          &:nth-child(2n){
+                            margin-right: 0;
+                            padding-right: 0;
+                            border: 0;
+                          }
+
+                          .infoSect{
+                            display: block;
+                            position: relative;
+                            padding: 0 65px 0 0;
+                              label{
+                                color: #333;
+                                display: block;
+                                font-weight: 600;
+                                font-size: 12px;
+                                line-height: 16px;
+                              }
+                              span{
+                                color: $primaryColor;
+                                display: block;
+                                font-weight: 600;
+                                font-size: 12px;
+                                line-height: 16px;
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                              }
+                          }
+                      }
+                    }
+                  }
+                }
+            }
+        }
+    }
+}
