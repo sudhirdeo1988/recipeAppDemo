@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import "./RecipeListItem.scss";
 import Row from "react-bootstrap/Row";
@@ -7,12 +7,15 @@ import { RECIPE_ITEM_CONSTANTS } from "../../utilities/constants";
 import { checkFoodType } from "../../utilities/utilityFunctions";
 
 function RecipeListItem(recipe) {
-  const showDetails = recipeData => {
+  console.log(recipe.onActive);
+  const showDetails = (recipeData) => {
     recipe.addRecipeItem(recipeData);
+    recipe.onSelected(recipeData.id);
   };
-  const foodType = checkFoodType(recipe.recipe.healthLabels);
+
+  const foodType = checkFoodType(recipe.recipe && recipe.recipe.healthLabels);
   return (
-    <div className="c-recipeListItem">
+    <div className={`c-recipeListItem ${recipe.onActive ? "st-active" : ""}`}>
       <div className="recipeImage">
         {foodType ? (
           <div className="recipeType veg"></div>
@@ -27,11 +30,11 @@ function RecipeListItem(recipe) {
         <Row>
           <Col xs={{ span: 6 }}>
             <label>Calories: </label>
-            <span>{recipe.recipe.calories}</span>
+            <span>{recipe.recipe.calories.toFixed(2)}&nbsp;kcal</span>
           </Col>
           <Col xs={{ span: 6 }}>
             <label>Total Weight: </label>
-            <span>{recipe.recipe.totalWeight}</span>
+            <span>{recipe.recipe.totalWeight.toFixed(2)}&nbsp;g</span>
           </Col>
         </Row>
       </div>
@@ -44,16 +47,16 @@ function RecipeListItem(recipe) {
   );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    recipeInfo: state.recipe
+    recipeInfo: state.recipe,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    addRecipeItem: payload =>
-      dispatch({ type: RECIPE_ITEM_CONSTANTS.ADD.RECIPEITEM, payload })
+    addRecipeItem: (payload) =>
+      dispatch({ type: RECIPE_ITEM_CONSTANTS.ADD.RECIPEITEM, payload }),
   };
 };
 

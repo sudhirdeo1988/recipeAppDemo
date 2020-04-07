@@ -5,18 +5,18 @@ font-family: 'Roboto Condensed', sans-serif;
 */
 
 @font-face {
-  font-family: "kunggroup";
-  src:url("../fonts/kunggroup.eot");
-  src:url("../fonts/kunggroup.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/kunggroup.woff") format("woff"),
-    url("../fonts/kunggroup.ttf") format("truetype"),
-    url("../fonts/kunggroup.svg#kunggroup") format("svg");
+  font-family: "themestudio";
+  src:url("../fonts/themestudio.eot");
+  src:url("../fonts/themestudio.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/themestudio.woff") format("woff"),
+    url("../fonts/themestudio.ttf") format("truetype"),
+    url("../fonts/themestudio.svg#kunggroup") format("svg");
   font-weight: normal;
   font-style: normal;
 
 }
 [data-icon]:before {
-  font-family: "kunggroup" !important;
+  font-family: "themestudio" !important;
   content: attr(data-icon);
   font-style: normal !important;
   font-weight: normal !important;
@@ -28,9 +28,9 @@ font-family: 'Roboto Condensed', sans-serif;
   -moz-osx-font-smoothing: grayscale;
 }
 
-[class^="kg-"]:before,
-[class*=" kg-"]:before {
-  font-family: "kunggroup" !important;
+[class^="ts-"]:before,
+[class*=" ts-"]:before {
+  font-family: "themestudio" !important;
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;
@@ -41,108 +41,118 @@ font-family: 'Roboto Condensed', sans-serif;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.kg-angle-up:before {
+.ts-angle-down:before {
   content: "\61";
 }
-.kg-angle-right:before {
+.ts-angle-left:before {
   content: "\62";
 }
-.kg-angle-left:before {
+.ts-angle-right:before {
   content: "\63";
 }
-.kg-angle-down:before {
+.ts-angle-up:before {
   content: "\64";
 }
-.kg-android-arrow-forward:before {
+.ts-bars:before {
   content: "\65";
 }
-.kg-android-arrow-up:before {
+.ts-android-close:before {
   content: "\66";
 }
-.kg-android-arrow-back:before {
+.ts-android-done:before {
   content: "\67";
 }
-.kg-android-arrow-down:before {
+.ts-android-add:before {
   content: "\68";
 }
-.kg-android-done:before {
+.ts-android-more-vertical:before {
   content: "\69";
 }
-.kg-android-close:before {
+.ts-android-more-horizontal:before {
   content: "\6a";
 }
-.kg-tick:before {
+.ts-android-remove:before {
   content: "\6b";
 }
-.kg-add:before {
+.ts-android-radio-button-off:before {
   content: "\6c";
 }
-.kg-user:before {
+.ts-android-radio-button-on:before {
   content: "\6d";
 }
-.kg-copy:before {
+.ts-android-checkbox-outline:before {
   content: "\6e";
 }
-.kg-search:before {
+.ts-android-checkbox-outline-blank:before {
   content: "\6f";
 }
-.kg-delete-garbage-streamline:before {
-  content: "\71";
-}
-.kg-download-arrow:before {
-  content: "\72";
-}
-.kg-funnel:before {
+.ts-android-checkbox-blank:before {
   content: "\70";
 }
-.kg-skyline:before {
+.ts-android-checkbox:before {
+  content: "\71";
+}
+.ts-person-stalker:before {
+  content: "\72";
+}
+.ts-person:before {
   content: "\73";
 }
-.kg-arrow-down:before {
+.ts-phone:before {
   content: "\74";
 }
-.kg-arrow-up:before {
+.ts-facebook-squared:before {
   content: "\75";
 }
-.kg-graph:before {
+.ts-instagram-logo:before {
   content: "\76";
 }
-.kg-networking:before {
+.ts-linkedin-square:before {
   content: "\77";
 }
-.kg-edit:before {
+.ts-email-envelope:before {
   content: "\78";
 }
-.kg-calendar-page:before {
+.ts-quote-right:before {
   content: "\79";
 }
-.kg-menu:before {
+.ts-quote-left:before {
   content: "\7a";
 }
-.kg-male:before {
+.ts-android-arrow-back:before {
   content: "\41";
 }
-.kg-users:before {
+.ts-android-arrow-forward:before {
   content: "\42";
 }
-.kg-line-chart-1:before {
+.ts-bell:before {
   content: "\43";
 }
-.kg-arrow-right:before {
+.ts-search:before {
   content: "\44";
 }
-.kg-linkedin:before {
-  content: "\45";
-}
-.kg-mail:before {
+.ts-letter-mail-1:before {
   content: "\46";
 }
-.kg-angle-double-left:before {
+.ts-pin-alt:before {
+  content: "\45";
+}
+.ts-trash-o:before {
   content: "\47";
 }
-.kg-angle-double-right:before {
+.ts-edit-pen-1:before {
   content: "\48";
 }
+.ts-eye:before {
+  content: "\49";
+}
+.ts-heart-o:before {
+  content: "\4a";
+}
+.ts-heart:before {
+  content: "\4b";
+}
+
 
 $primaryColor: #D91488;
 @mixin rounded-corners ($property) {
@@ -173,4 +183,14 @@ $primaryColor: #D91488;
   font-size: 18px;
   font-weight: 600;
   font-family: 'Roboto Condensed', sans-serif;
+}
+.c-loading{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 200px;
+  height: 100%;
+  width: 100%;
+  background: rgba(255,255,255,0.2) url('../images/loader-wheel.gif') center center no-repeat;
 }

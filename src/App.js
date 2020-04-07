@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import uuid from "react-uuid";
 import { connect } from "react-redux";
 import { getRecipeData } from "./utilities/api.js";
 import SearchPanel from "./components/SearchPanel/SearchPanel";
@@ -11,24 +12,19 @@ import Col from "react-bootstrap/Col";
 
 function App(props) {
   const [isLoading, setLoading] = useState(null);
-  // const [recipeDtls, setrecipeDtls] = useState({});
-  // const { recipeInfo } = props;
 
-  // async function fetchMyAPI() {
-  //   const recipeData = await getRecipeData("chicken");
-  //   setRecipe(recipeData);
-  //   console.log(recipeData);
-  //   props.addRecipe(recipeData);
-  // }
-
-  // useEffect(() => {
-  //   fetchMyAPI();
-  // },[]);
+  useEffect(() => {
+    fetchRecipeFromAPI()
+  }, []);
 
   async function fetchRecipeFromAPI(searchQuery) {
     setLoading(true);
     const recipeData = await getRecipeData(searchQuery);
-    const newRecipeData = recipeData.map(rec => rec.recipe);
+    const newRecipeData = recipeData.map(function (el) {
+      var o = Object.assign({}, el);
+      o.recipe.id = uuid();
+      return o.recipe;
+    });
     props.addRecipe(newRecipeData);
     setLoading(false);
   }
@@ -50,16 +46,16 @@ function App(props) {
   );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    recipeInfo: state.recipe
+    recipeInfo: state.recipe,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    addRecipe: payload =>
-      dispatch({ type: RECIPE_CONSTANTS.ADD.RECIPE, payload })
+    addRecipe: (payload) =>
+      dispatch({ type: RECIPE_CONSTANTS.ADD.RECIPE, payload }),
   };
 };
 

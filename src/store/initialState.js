@@ -1,6 +1,7 @@
 const emptyInitialState = {
   recipe: [],
-  recipeItem: []
+  recipeItem: {},
+  favouriateRecipe:[]
 };
 
 export default emptyInitialState;

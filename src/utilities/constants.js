@@ -10,3 +10,12 @@ export const RECIPE_ITEM_CONSTANTS = {
   }
 };
 
+export const FAV_RECIPES = {
+  ADD:{
+    RECIPEITEM: "add_fav_recipe"
+  },
+  REMOVE:{
+    RECIPEITEM: "remove_fav_recipe"
+  }
+};
+

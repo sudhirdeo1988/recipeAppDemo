@@ -9,8 +9,12 @@
   background-color: #fff;
   box-shadow: 0 0 3px #cacaca;
 
+  &.st-active{
+    border: 1px solid $primaryColor;
+  }
+
     .recipeImage{
-      background: url('../../assets/images/loader.gif') center center no-repeat;
+      background: url('../../assets/images/loader-wheel.gif') center center no-repeat;
       display: block;
       min-height: 150px;
       max-height: 150px;
@@ -61,6 +65,10 @@
       font-weight: 600;
       color: $primaryColor;
       margin-bottom: 5px;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .recipeBy{
       display: block;

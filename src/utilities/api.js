@@ -15,7 +15,9 @@ export const apiCall = axios.create({
   method: 'GET'
 });
 export const getRecipeData = async searchKey => {
-  //const recipeDataUpdate = await apiCall.get(`/search?q=${searchKey}&apiKey=${apiKey}`);
+  if(searchKey === '' || searchKey === undefined){
+    searchKey = 'all';
+  }
   const recipeDataUpdate = await apiCall.get(`/search?q=${searchKey}&app_id=${apiId}&app_key=${apiKey}`);
   return recipeDataUpdate.data.hits;
 };
