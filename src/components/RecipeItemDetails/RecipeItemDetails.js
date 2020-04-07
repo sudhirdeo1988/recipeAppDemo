@@ -31,7 +31,6 @@ function RecipeItemDetails(props) {
     }
     const timer = setTimeout(() => {
       setpulse(false);
-      console.log(pulse);
     }, 500);
     return () => clearTimeout(timer);
   };

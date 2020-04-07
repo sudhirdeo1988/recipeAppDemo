@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import uuid from "react-uuid";
+import { Helmet } from "react-helmet";
 import { connect } from "react-redux";
 import { getRecipeData } from "./utilities/api.js";
 import SearchPanel from "./components/SearchPanel/SearchPanel";
@@ -14,7 +15,7 @@ function App(props) {
   const [isLoading, setLoading] = useState(null);
 
   useEffect(() => {
-    fetchRecipeFromAPI()
+    fetchRecipeFromAPI();
   }, []);
 
   async function fetchRecipeFromAPI(searchQuery) {
@@ -30,6 +31,9 @@ function App(props) {
   }
   return (
     <div className="App">
+      <Helmet>
+        <title>Recipe App Demo</title>
+      </Helmet>
       <SearchPanel fetchRecipeFromAPI={fetchRecipeFromAPI}></SearchPanel>
 
       <Container fluid>
