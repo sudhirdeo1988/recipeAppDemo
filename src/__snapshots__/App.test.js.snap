@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders learn react link 1`] = `
+<div>
+  <div
+    class="App"
+  >
+    <div
+      class="c-searchPanel"
+    >
+      <div
+        class="c-favouriteList"
+      >
+        <button
+          class="listBtn"
+        >
+          <i
+            class="icon ts-heart-o"
+          />
+          <span
+            class="itemCount"
+          >
+            1
+          </span>
+        </button>
+      </div>
+      <div
+        class="container-fluid"
+      >
+        <div
+          class="row"
+        >
+          <div
+            class="col-md-8 offset-md-2"
+          >
+            <h1
+              class="c-pageTitle"
+            >
+              You will love recipe of our
+              <span>
+                Delicious menu
+              </span>
+            </h1>
+            <form>
+              <div
+                class="searchPanel"
+              >
+                <input
+                  class="txtBox"
+                  name="companyName"
+                  placeholder="Looking For..."
+                  type="text"
+                />
+                <button
+                  class="submitBtn"
+                  type="submit"
+                >
+                  Search
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="container-fluid"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col-md-8"
+        >
+          <div
+            class="c-recipeList"
+          >
+            <h2
+              class="sectionHeading"
+            >
+              Recipe List:
+            </h2>
+            <div
+              class="c-loading"
+            />
+          </div>
+        </div>
+        <div
+          class="col-md-4"
+        >
+          <div
+            class="c-recipeItemDetails"
+          >
+            <h2
+              class="sectionHeading"
+            >
+              Recipe Details
+            </h2>
+            <div
+              class="r_info"
+            >
+              <h2
+                class="r_name"
+              >
+                All-Butter Pie Crust
+                <button
+                  class="btnAdd  "
+                  id="btnAdd"
+                />
+              </h2>
+              <div
+                class="r_section"
+              >
+                <label
+                  class="s_label"
+                >
+                  Health Label
+                </label>
+                <div
+                  class="s_block healthLbl"
+                >
+                  <ul>
+                    <li>
+                      Sugar-Conscious
+                    </li>
+                    <li>
+                      Vegetarian
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

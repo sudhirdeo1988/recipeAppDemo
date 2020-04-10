@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Favourite List Componets should render correctly 1`] = `
+<div>
+  <div
+    class="c-favouriteList"
+  >
+    <button
+      class="listBtn"
+    >
+      <i
+        class="icon ts-heart-o"
+      />
+      <span
+        class="itemCount"
+      >
+        1
+      </span>
+    </button>
+  </div>
+</div>
+`;
