@@ -19,6 +19,7 @@ function RecipeItemDetails(props) {
   if (recipeDtls && recipeDtls.totalNutrients) {
     peopleArray = Object.values(recipeDtls.totalNutrients);
   }
+
   const addToFav = async (dtls) => {
     setpulse(true);
     const checkFav = await checkInFav(favRecipe, recipeDtls);

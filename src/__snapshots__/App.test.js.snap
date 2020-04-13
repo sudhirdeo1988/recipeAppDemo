@@ -81,6 +81,79 @@ exports[`renders learn react link 1`] = `
               Recipe List:
             </h2>
             <div
+              class="row"
+            >
+              <div
+                class="col-md-4"
+              >
+                <div
+                  class="c-recipeListItem "
+                >
+                  <div
+                    class="recipeImage"
+                  >
+                    <div
+                      class="recipeType veg"
+                    />
+                    <img
+                      alt="All-Butter Pie Crust"
+                      src="https://www.edamam.com/web-img/b50/b5031e0c62073138c6b2f878430337f7.JPG"
+                    />
+                  </div>
+                  <div
+                    class="recipeTitle"
+                  >
+                    All-Butter Pie Crust
+                  </div>
+                  <div
+                    class="recipeBy"
+                  >
+                    By: 
+                    Food52
+                  </div>
+                  <div
+                    class="recipeInfo"
+                  >
+                    <div
+                      class="row"
+                    >
+                      <div
+                        class="col-6"
+                      >
+                        <label>
+                          Calories: 
+                        </label>
+                        <span>
+                          2651.34
+                           kcal
+                        </span>
+                      </div>
+                      <div
+                        class="col-6"
+                      >
+                        <label>
+                          Total Weight: 
+                        </label>
+                        <span>
+                          645.09
+                           g
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="recipeBtn"
+                  >
+                    <button
+                      class="btnLarge"
+                    >
+                      Show Details
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
               class="c-loading"
             />
           </div>

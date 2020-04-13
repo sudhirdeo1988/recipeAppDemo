@@ -14,16 +14,19 @@ function SearchPanel(props) {
   const getSearchQuery = (e) => {
     e.preventDefault();
     props.addRecipeItem(emptyInitialState.recipeItem);
-    props.fetchRecipeFromAPI(searchQuery);
+    props.serchQuerydata(searchQuery);
   };
 
   const handleChange = (event) => {
     event.preventDefault();
     setsearchQuery(event.target.value);
   };
+  const falseState = st => {
+    props.changeState(st);
+  }
   return (
     <div className="c-searchPanel">
-      <FavouriteList></FavouriteList>
+      <FavouriteList falseState={falseState}></FavouriteList>
       <Container fluid>
         <Row>
           <Col md={{ span: 8, offset: 2 }}>

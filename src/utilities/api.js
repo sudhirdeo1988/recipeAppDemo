@@ -14,11 +14,13 @@ export const apiCall = axios.create({
   baseURL: baseUrl,
   method: 'GET'
 });
-export const getRecipeData = async searchKey => {
+export const getRecipeData = async (searchKey, pageFrom, pageTo) => {
   if(searchKey === '' || searchKey === undefined){
     searchKey = 'all';
   }
-  const recipeDataUpdate = await apiCall.get(`/search?q=${searchKey}&app_id=${apiId}&app_key=${apiKey}`);
+  // pageFrom = 1;
+  // pageTo = 10;
+  const recipeDataUpdate = await apiCall.get(`/search?q=${searchKey}&from=${pageFrom}&to=${pageTo}&app_id=${apiId}&app_key=${apiKey}`);
   return recipeDataUpdate.data.hits;
 };
 

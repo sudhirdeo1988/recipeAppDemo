@@ -1,6 +1,9 @@
 export const RECIPE_CONSTANTS = {
   ADD:{
     RECIPE: "add_recipe"
+  },
+  REMOVE:{
+    RECIPE: "remove_recipe"
   }
 };
 

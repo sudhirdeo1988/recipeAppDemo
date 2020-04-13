@@ -12,6 +12,7 @@ function FavouriteList(props) {
 
   const removeItem = (item) => {
     props.removeFromFavRecipe(item);
+    props.falseState('false');
   };
   const handleClose = () => {
     setShow(false);

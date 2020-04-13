@@ -14,9 +14,9 @@ function RecipeList(props) {
   return (
     <div className="c-recipeList">
       <h2 className="sectionHeading">Recipe List:</h2>
-      {isLoading ? (
+      {/* {isLoading ? (
         <div className="c-loading"></div>
-      ) : (
+      ) : ( */}
         <Row>
           {recipeInfo.map((recipe, index) => {
             return (
@@ -30,7 +30,8 @@ function RecipeList(props) {
             );
           })}
         </Row>
-      )}
+        {isLoading && <div className="c-loading"></div>}
+      {/* )} */}
     </div>
   );
 }
