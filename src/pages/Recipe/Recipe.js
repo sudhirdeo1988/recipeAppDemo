@@ -38,7 +38,7 @@ function Recipe(props) {
     if (pageTo - pageFrom === 10) {
       fetchRecipeFromAPI(searchQ, pageFrom, pageTo);
     }
-  }, [pageFrom, pageTo]);
+  }, [pageFrom, pageTo, searchQ]);
 
   async function fetchRecipeFromAPI(searchQuery, pageFrom, pageTo) {
     setLoading(true);
