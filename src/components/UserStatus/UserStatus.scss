@@ -1,0 +1,80 @@
+@import '../../assets/scss/utilities.scss';
+
+.c-userStatus{
+  position: absolute;
+  top: 35px;
+  right: 40px;
+  height: 45px;
+  width: 45px;
+  background: #fff;
+  border-radius: 40px;
+  box-shadow: 0 0 2px #999;
+
+    .listBtn{
+      display: block;
+      border: 1px solid #fff !important;
+      height: 45px;
+      width: 45px;
+      padding: 0;
+      outline: none;
+      background-color: #fff !important;
+      border-radius: 40px;
+
+      &::after{
+        border: 0;
+      }
+
+        img{
+          height: 43px;
+          width: 43px;
+          border-radius: 40px;
+        }
+    }
+}
+.userInfo{
+  background-color: #eee;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+    .userPic{
+      height: 75px;
+      width: 75px;
+      margin: 0 auto 10px;
+        img{
+          border: 1px solid #999;
+          height: 75px;
+          width: 75px;
+          padding: 2px;
+          border-radius: 50%;
+        }
+    }
+    .userName{
+      text-align: center;
+      display: block;
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      color: #333;
+    }
+}
+.dropdown-menu{
+  font-family: 'Roboto Condensed', sans-serif;
+  padding: 0 0 10px;
+
+    .dropdown-item{
+      color: #999;
+      display: block;
+      padding: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      transition: all ease 0.3s;
+
+        &:hover{
+          color: #333;
+          background-color: #eee;
+        }
+    }
+}

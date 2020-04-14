@@ -8,7 +8,6 @@ export const recipeReducer = (state = emptyInitialState.recipe, action) => {
         ...state,
         ...action.payload
       ];
-      console.log(recipeInfo);
       return recipeInfo;
       case RECIPE_CONSTANTS.REMOVE.RECIPE:
         const removerecipeInfo = action.payload;

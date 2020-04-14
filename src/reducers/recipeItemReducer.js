@@ -9,6 +9,8 @@ export const recipeItemReducer = (
     case RECIPE_ITEM_CONSTANTS.ADD.RECIPEITEM:
       const recipeItemInfo = action.payload;
       return recipeItemInfo;
+      case RECIPE_ITEM_CONSTANTS.EMPTY.RECIPEITEM:
+        return action.payload;
     default:
       return state;
   }

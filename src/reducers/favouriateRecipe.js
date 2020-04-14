@@ -10,6 +10,8 @@ export const favouriateRecipe = (state = emptyInitialState.favouriateRecipe, act
         const favRecipeItem = action.payload;
         const updatedList = state.filter(item => item.id !== favRecipeItem.id)
         return [...updatedList];
+        case FAV_RECIPES.EMPTY.RECIPEITEM:
+          return action.payload;
     default:
       return state;
   }

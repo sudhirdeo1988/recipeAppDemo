@@ -3,7 +3,7 @@
 .c-searchPanel{
   display: block;
   background-color: $primaryColor;
-  padding: 50px;
+  padding: 30px 30px 40px;
   position: relative;
 
     .searchPanel{
@@ -62,12 +62,12 @@
     .c-pageTitle{
       color: #fff;
       display: block;
-      font-size: 34px;
-      line-height: 40px;
-      font-weight: 700;
+      font-size: 47px;
+      line-height: 60px;
       text-align: left;
-      margin-bottom: 20px;
-      font-family: 'Roboto Condensed', sans-serif;
+      margin-bottom: 30px;
+      text-align: center;
+      font-family: 'Great Vibes', cursive;
 
         span{
           display: block;

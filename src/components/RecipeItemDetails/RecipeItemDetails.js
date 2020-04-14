@@ -5,7 +5,7 @@ import { checkInFav } from "../../utilities/utilityFunctions";
 import "./RecipeItemDetails.scss";
 
 function RecipeItemDetails(props) {
-  const { recipeDtls, favRecipe } = props;
+  const { recipeDtls, favRecipe, changeState } = props;
   const [addedToFav, setaddedToFav] = useState(false);
   const [pulse, setpulse] = useState(false);
   const checkaddToFav = async (recipeDtls) => {
@@ -13,8 +13,9 @@ function RecipeItemDetails(props) {
     setaddedToFav(checkFavStatus);
   };
   useEffect(() => {
+    setaddedToFav(changeState);
     checkaddToFav(recipeDtls);
-  }, [recipeDtls]);
+  }, [addedToFav]);
   let peopleArray = [];
   if (recipeDtls && recipeDtls.totalNutrients) {
     peopleArray = Object.values(recipeDtls.totalNutrients);
