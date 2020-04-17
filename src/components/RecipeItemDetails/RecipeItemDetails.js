@@ -8,14 +8,15 @@ function RecipeItemDetails(props) {
   const { recipeDtls, favRecipe, changeState } = props;
   const [addedToFav, setaddedToFav] = useState(false);
   const [pulse, setpulse] = useState(false);
-  const checkaddToFav = async (recipeDtls) => {
-    const checkFavStatus = await checkInFav(favRecipe, recipeDtls);
-    setaddedToFav(checkFavStatus);
-  };
+
   useEffect(() => {
     setaddedToFav(changeState);
+    const checkaddToFav = async (recipeDtls) => {
+      const checkFavStatus = await checkInFav(favRecipe, recipeDtls);
+      setaddedToFav(checkFavStatus);
+    };
     checkaddToFav(recipeDtls);
-  }, [addedToFav]);
+  }, [addedToFav, recipeDtls, changeState, favRecipe]);
   let peopleArray = [];
   if (recipeDtls && recipeDtls.totalNutrients) {
     peopleArray = Object.values(recipeDtls.totalNutrients);

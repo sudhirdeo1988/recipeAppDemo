@@ -1,15 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Helmet } from "react-helmet";
 import { connect } from "react-redux";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import debounce from "lodash.debounce";
+import loadable from "@loadable/component";
 import { getRecipeData } from "../../utilities/api";
-import SearchPanel from "../../components/SearchPanel/SearchPanel";
-import RecipeList from "../../components/RecipeList/RecipeList";
-import RecipeItemDetails from "../../components/RecipeItemDetails/RecipeItemDetails";
 import { RECIPE_CONSTANTS } from "../../utilities/constants";
+
+const SearchPanel = loadable(() =>
+  import("../../components/SearchPanel/SearchPanel")
+);
+const RecipeList = loadable(() =>
+  import("../../components/RecipeList/RecipeList")
+);
+const RecipeItemDetails = loadable(() =>
+  import("../../components/RecipeItemDetails/RecipeItemDetails")
+);
 
 function Recipe(props) {
   const [isLoading, setLoading] = useState(null);
@@ -31,21 +39,22 @@ function Recipe(props) {
   const serchQuerydata = (searchQuery) => {
     setsearchQ(searchQuery);
     props.removeRecipe([]);
-    fetchRecipeFromAPI(searchQuery, pageFrom, pageTo);
   };
-
+  const fetchRecipeFromAPI = useCallback(
+    async (searchQuery, pageFrom, pageTo) => {
+      setLoading(true);
+      const recipeData = await getRecipeData(searchQuery, pageFrom, pageTo);
+      props.addRecipe(recipeData);
+      setLoading(false);
+    },
+    [props]
+  );
   useEffect(() => {
     if (pageTo - pageFrom === 10) {
       fetchRecipeFromAPI(searchQ, pageFrom, pageTo);
     }
   }, [pageFrom, pageTo, searchQ]);
 
-  async function fetchRecipeFromAPI(searchQuery, pageFrom, pageTo) {
-    setLoading(true);
-    const recipeData = await getRecipeData(searchQuery, pageFrom, pageTo);
-    props.addRecipe(recipeData);
-    setLoading(false);
-  }
   const changeState = (st) => {
     setfavState(st);
     return st;
