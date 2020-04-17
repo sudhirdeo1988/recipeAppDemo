@@ -38,6 +38,8 @@ function Recipe(props) {
 
   const serchQuerydata = (searchQuery) => {
     setsearchQ(searchQuery);
+    setpageFrom(0);
+    setpageTo(10);
     props.removeRecipe([]);
   };
   const fetchRecipeFromAPI = useCallback(
